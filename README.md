@@ -1,14 +1,13 @@
-# TFB103 Add something by test1
-## title2
-### title3
-- aaa
-- bbb
-- ccc
+# TFB103 
+## Practice content
+
+- Python
+- PyETL
 
 1. aaaa
 2. bbbb
 3. cccc
-4. dddddd added by test2
+
 
 
 
@@ -17,5 +16,4 @@ Name|Age|Height
 Allen|25|175
 Ted|23|180
 
-adsfadsfsafsd
-321 Added something by test2
+
