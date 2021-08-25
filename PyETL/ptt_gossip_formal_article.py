@@ -67,11 +67,21 @@ for i in range(0,int(pages)+1):
             # print(article_content)
 
             # 在最下面顯示ptt作者相關資訊
-            article_infos = article_soup.select('div[class="article-metaline"]')
+            article_info_list = article_soup.select('div[class="article-metaline"] span')
             # print(article_infos[0])
-            for article_info in article_infos:
-                # print(article_info)
-                article_content += article_info.text + '\n'
+            # for article_info in article_infos:
+            #     # print(article_info)
+            #     article_content += article_info.text + '\n'
+            for n, info in enumerate(article_info_list):
+                if (n+1)%6 == 2:
+                    author = info.text
+                if (n+1)%6 == 4:
+                    title = info.text
+                if (n+1)%6 == 0:
+                    datetime = info.text
+            article_content += '作者: {}\n'.format(author)
+            article_content += '標題: {}\n'.format(title)
+            article_content += '時間: {}\n'.format(datetime)
             # print(article_content)
             try:
                 with open('./pttGossip/{}.txt'.format(title), 'w', encoding='utf=8') as f:
